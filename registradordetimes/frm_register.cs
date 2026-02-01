@@ -8,7 +8,7 @@ namespace registradordetimes
         public frm_register()
         {
             InitializeComponent();
-
+            //asasasa
         }
 
         private void btn_enviar_Click(object sender, EventArgs e)
