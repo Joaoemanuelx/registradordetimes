@@ -44,9 +44,9 @@ namespace registradordetimes
                     jogadores = new List<Jogador>();
                 }
 
-                jogador.nome = txt_nome.Text;
-                jogador.posicao = txt_posicao.Text;
-                jogador.idade = int.Parse(txt_idade.Text);
+                jogador.nome = txtNome.Text;
+                jogador.posicao = txtPosicao.Text;
+                jogador.idade = int.Parse(txtIdade.Text);
                 jogador.time = cboTimes.Text;
 
                 if (jogadores.Count >= 11)
@@ -87,9 +87,9 @@ namespace registradordetimes
 
         private void limparcampos()
         {
-            txt_nome.Clear();
-            txt_posicao.Clear();
-            txt_idade.Clear();
+            txtNome.Clear();
+            txtPosicao.Clear();
+            txtIdade.Clear();
         }
 
         private void btnApagar_Click(object sender, EventArgs e)
@@ -149,27 +149,27 @@ namespace registradordetimes
             bool temerro = false;
 
             errorProvider1.Clear();
-            if (string.IsNullOrWhiteSpace(txt_nome.Text) ||
-                !txt_nome.Text.Replace(" ", "").All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(txtNome.Text) ||
+                !txtNome.Text.Replace(" ", "").All(char.IsLetter))
             {
-                errorProvider1.SetError(txt_nome, "Nome invalido");
+                errorProvider1.SetError(txtNome, "Nome invalido");
 
                 temerro = true;
             }
 
             errorProvider2.Clear();
-            if (string.IsNullOrWhiteSpace(txt_posicao.Text) ||
-                !txt_posicao.Text.Replace(" ", "").All(char.IsLetter))
+            if (string.IsNullOrWhiteSpace(txtPosicao.Text) ||
+                !txtPosicao.Text.Replace(" ", "").All(char.IsLetter))
             {
-                errorProvider2.SetError(txt_posicao, "Posição invalida");
+                errorProvider2.SetError(txtPosicao, "Posição invalida");
 
                 temerro = true;
             }
 
             errorProvider3.Clear();
-            if (!int.TryParse(txt_idade.Text, out int idade) || idade <= 0)
+            if (!int.TryParse(txtIdade.Text, out int idade) || idade <= 0)
             {
-                errorProvider3.SetError(txt_idade, "Idade invalida");
+                errorProvider3.SetError(txtIdade, "Idade invalida");
 
                 temerro = true;
             }
@@ -190,20 +190,21 @@ namespace registradordetimes
 
             Jogador jogadorSelecionado = (Jogador)cboJogadores.SelectedItem;
 
-            // Se escolheu cadastrar novo jogador
             if (jogadorSelecionado.nome == "➕ Cadastrar novo jogador...")
             {
                 btnApagar.Enabled = false;
+                btnEnviar.Enabled = true;
                 limparcampos();
                 cboTimes.SelectedIndex = -1;
                 return;
             }
-            // Habilita o botão de apagar para jogadores reais
-            btnApagar.Enabled = true;
 
-            txt_nome.Text = jogadorSelecionado.nome;
-            txt_posicao.Text = jogadorSelecionado.posicao;
-            txt_idade.Text = jogadorSelecionado.idade.ToString();
+            btnApagar.Enabled = true;
+            btnEnviar.Enabled = false;
+
+            txtNome.Text = jogadorSelecionado.nome;
+            txtPosicao.Text = jogadorSelecionado.posicao;
+            txtIdade.Text = jogadorSelecionado.idade.ToString();
             cboTimes.Text = jogadorSelecionado.time;
         }
 
@@ -223,6 +224,7 @@ namespace registradordetimes
             cboTimes.DataSource = times;
             cboTimes.DisplayMember = "nome";
         }
+
         //carregar jogadores no combobox
         private void CarregarJogadoresCombo()
         {
@@ -246,6 +248,9 @@ namespace registradordetimes
             cboJogadores.DisplayMember = "nome";
         }
 
+        private void lblOpcao_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

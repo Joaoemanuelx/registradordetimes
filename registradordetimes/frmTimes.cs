@@ -12,9 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace registradordetimes
 {
-    public partial class frm_time : Form
+    public partial class frmTimes : Form
     {
-        public frm_time()
+        public frmTimes()
         {
             InitializeComponent();
         }

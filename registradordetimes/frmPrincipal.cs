@@ -44,7 +44,7 @@ namespace registradordetimes
 
         private void cadastrarTimeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frm_time formTime = new frm_time();
+            frmTimes formTime = new frmTimes();
             formTime.Show();
         }
     }

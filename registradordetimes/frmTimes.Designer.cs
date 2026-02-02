@@ -1,6 +1,6 @@
 ﻿namespace registradordetimes
 {
-    partial class frm_time
+    partial class frmTimes
     {
         /// <summary>
         /// Required designer variable.
@@ -38,25 +38,27 @@
             // 
             // txtNomeTime
             // 
-            txtNomeTime.Location = new Point(88, 64);
+            txtNomeTime.Location = new Point(77, 48);
+            txtNomeTime.Margin = new Padding(3, 2, 3, 2);
             txtNomeTime.Name = "txtNomeTime";
-            txtNomeTime.Size = new Size(172, 27);
+            txtNomeTime.Size = new Size(151, 23);
             txtNomeTime.TabIndex = 0;
             // 
             // txtCadastratTime
             // 
             txtCadastratTime.AutoSize = true;
-            txtCadastratTime.Location = new Point(29, 68);
+            txtCadastratTime.Location = new Point(25, 51);
             txtCadastratTime.Name = "txtCadastratTime";
-            txtCadastratTime.Size = new Size(53, 20);
+            txtCadastratTime.Size = new Size(43, 15);
             txtCadastratTime.TabIndex = 1;
             txtCadastratTime.Text = "Nome:";
             // 
             // btnCadastrartime
             // 
-            btnCadastrartime.Location = new Point(88, 118);
+            btnCadastrartime.Location = new Point(77, 88);
+            btnCadastrartime.Margin = new Padding(3, 2, 3, 2);
             btnCadastrartime.Name = "btnCadastrartime";
-            btnCadastrartime.Size = new Size(94, 29);
+            btnCadastrartime.Size = new Size(82, 22);
             btnCadastrartime.TabIndex = 2;
             btnCadastrartime.Text = "&Cadastrar";
             btnCadastrartime.UseVisualStyleBackColor = true;
@@ -64,9 +66,10 @@
             // 
             // btnApagarTime
             // 
-            btnApagarTime.Location = new Point(446, 94);
+            btnApagarTime.Location = new Point(390, 70);
+            btnApagarTime.Margin = new Padding(3, 2, 3, 2);
             btnApagarTime.Name = "btnApagarTime";
-            btnApagarTime.Size = new Size(94, 29);
+            btnApagarTime.Size = new Size(82, 22);
             btnApagarTime.TabIndex = 3;
             btnApagarTime.Text = "&Apagar";
             btnApagarTime.UseVisualStyleBackColor = true;
@@ -75,34 +78,39 @@
             // listBox2
             // 
             listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(290, 59);
+            listBox2.ItemHeight = 15;
+            listBox2.Location = new Point(254, 44);
+            listBox2.Margin = new Padding(3, 2, 3, 2);
             listBox2.Name = "listBox2";
-            listBox2.Size = new Size(150, 104);
+            listBox2.Size = new Size(132, 79);
             listBox2.TabIndex = 4;
             // 
             // btnCarregarTimes
             // 
-            btnCarregarTimes.Location = new Point(446, 59);
+            btnCarregarTimes.Location = new Point(390, 44);
+            btnCarregarTimes.Margin = new Padding(3, 2, 3, 2);
             btnCarregarTimes.Name = "btnCarregarTimes";
-            btnCarregarTimes.Size = new Size(94, 29);
+            btnCarregarTimes.Size = new Size(82, 22);
             btnCarregarTimes.TabIndex = 5;
             btnCarregarTimes.Text = "&Carregar";
             btnCarregarTimes.UseVisualStyleBackColor = true;
             btnCarregarTimes.Click += btnCarregarTimes_Click;
             // 
-            // frm_time
+            // frmTimes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(592, 221);
+            ClientSize = new Size(518, 166);
             Controls.Add(btnCarregarTimes);
             Controls.Add(listBox2);
             Controls.Add(btnApagarTime);
             Controls.Add(btnCadastrartime);
             Controls.Add(txtCadastratTime);
             Controls.Add(txtNomeTime);
-            Name = "frm_time";
-            Text = "Form1";
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "frmTimes";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Cadrastar Times";
             ResumeLayout(false);
             PerformLayout();
         }

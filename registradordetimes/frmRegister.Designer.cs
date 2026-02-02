@@ -32,10 +32,10 @@
             lbl_nome = new Label();
             lbl_posicao = new Label();
             lbl_idade = new Label();
-            txt_idade = new TextBox();
-            txt_posicao = new TextBox();
-            txt_nome = new TextBox();
-            btn_enviar = new Button();
+            txtIdade = new TextBox();
+            txtPosicao = new TextBox();
+            txtNome = new TextBox();
+            btnEnviar = new Button();
             btnApagar = new Button();
             errorProvider1 = new ErrorProvider(components);
             toolTip1 = new ToolTip(components);
@@ -48,6 +48,7 @@
             cboTimes = new ComboBox();
             cboJogadores = new ComboBox();
             lbl_time = new Label();
+            lblOpcao = new Label();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider3).BeginInit();
@@ -57,75 +58,78 @@
             // lbl_nome
             // 
             lbl_nome.AutoSize = true;
-            lbl_nome.Location = new Point(40, 157);
+            lbl_nome.Location = new Point(36, 172);
+            lbl_nome.Margin = new Padding(4, 0, 4, 0);
             lbl_nome.Name = "lbl_nome";
-            lbl_nome.Size = new Size(43, 15);
+            lbl_nome.Size = new Size(60, 19);
             lbl_nome.TabIndex = 0;
             lbl_nome.Text = "Nome:";
             // 
             // lbl_posicao
             // 
             lbl_posicao.AutoSize = true;
-            lbl_posicao.Location = new Point(40, 76);
+            lbl_posicao.Location = new Point(36, 218);
+            lbl_posicao.Margin = new Padding(4, 0, 4, 0);
             lbl_posicao.Name = "lbl_posicao";
-            lbl_posicao.Size = new Size(51, 15);
+            lbl_posicao.Size = new Size(72, 19);
             lbl_posicao.TabIndex = 1;
             lbl_posicao.Text = "Posição:";
             // 
             // lbl_idade
             // 
             lbl_idade.AutoSize = true;
-            lbl_idade.Location = new Point(40, 118);
+            lbl_idade.Location = new Point(36, 272);
+            lbl_idade.Margin = new Padding(4, 0, 4, 0);
             lbl_idade.Name = "lbl_idade";
-            lbl_idade.Size = new Size(39, 15);
+            lbl_idade.Size = new Size(56, 19);
             lbl_idade.TabIndex = 2;
             lbl_idade.Text = "Idade:";
             // 
-            // txt_idade
+            // txtIdade
             // 
-            txt_idade.Location = new Point(99, 115);
-            txt_idade.Margin = new Padding(3, 2, 3, 2);
-            txt_idade.Name = "txt_idade";
-            txt_idade.Size = new Size(203, 23);
-            txt_idade.TabIndex = 4;
-            toolTip3.SetToolTip(txt_idade, "Digite uma idade valida!");
+            txtIdade.Location = new Point(120, 267);
+            txtIdade.Margin = new Padding(4);
+            txtIdade.Name = "txtIdade";
+            txtIdade.Size = new Size(288, 29);
+            txtIdade.TabIndex = 4;
+            toolTip3.SetToolTip(txtIdade, "Digite uma idade valida!");
             // 
-            // txt_posicao
+            // txtPosicao
             // 
-            txt_posicao.Location = new Point(99, 73);
-            txt_posicao.Margin = new Padding(3, 2, 3, 2);
-            txt_posicao.Name = "txt_posicao";
-            txt_posicao.Size = new Size(203, 23);
-            txt_posicao.TabIndex = 5;
-            toolTip2.SetToolTip(txt_posicao, "Digite uma posição valida!");
+            txtPosicao.Location = new Point(120, 215);
+            txtPosicao.Margin = new Padding(4);
+            txtPosicao.Name = "txtPosicao";
+            txtPosicao.Size = new Size(288, 29);
+            txtPosicao.TabIndex = 5;
+            toolTip2.SetToolTip(txtPosicao, "Digite uma posição valida!");
             // 
-            // txt_nome
+            // txtNome
             // 
-            txt_nome.BackColor = SystemColors.Window;
-            txt_nome.Location = new Point(99, 155);
-            txt_nome.Margin = new Padding(3, 2, 3, 2);
-            txt_nome.Name = "txt_nome";
-            txt_nome.Size = new Size(203, 23);
-            txt_nome.TabIndex = 6;
-            toolTip1.SetToolTip(txt_nome, "Digite um nome valido!");
+            txtNome.BackColor = SystemColors.Window;
+            txtNome.Location = new Point(120, 170);
+            txtNome.Margin = new Padding(4);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(288, 29);
+            txtNome.TabIndex = 6;
+            toolTip1.SetToolTip(txtNome, "Digite um nome valido!");
             // 
-            // btn_enviar
+            // btnEnviar
             // 
-            btn_enviar.Location = new Point(99, 190);
-            btn_enviar.Margin = new Padding(3, 2, 3, 2);
-            btn_enviar.Name = "btn_enviar";
-            btn_enviar.Size = new Size(82, 22);
-            btn_enviar.TabIndex = 9;
-            btn_enviar.Text = "&Enviar";
-            btn_enviar.UseVisualStyleBackColor = true;
-            btn_enviar.Click += btn_enviar_Click;
+            btnEnviar.Location = new Point(109, 319);
+            btnEnviar.Margin = new Padding(4);
+            btnEnviar.Name = "btnEnviar";
+            btnEnviar.Size = new Size(116, 28);
+            btnEnviar.TabIndex = 9;
+            btnEnviar.Text = "&Enviar";
+            btnEnviar.UseVisualStyleBackColor = true;
+            btnEnviar.Click += btn_enviar_Click;
             // 
             // btnApagar
             // 
-            btnApagar.Location = new Point(220, 190);
-            btnApagar.Margin = new Padding(3, 2, 3, 2);
+            btnApagar.Location = new Point(294, 319);
+            btnApagar.Margin = new Padding(4);
             btnApagar.Name = "btnApagar";
-            btnApagar.Size = new Size(82, 22);
+            btnApagar.Size = new Size(116, 28);
             btnApagar.TabIndex = 11;
             btnApagar.Text = "&Apagar";
             btnApagar.UseVisualStyleBackColor = true;
@@ -171,19 +175,20 @@
             // 
             cboTimes.AccessibleDescription = "";
             cboTimes.FormattingEnabled = true;
-            cboTimes.Location = new Point(99, 7);
-            cboTimes.Margin = new Padding(3, 2, 3, 2);
+            cboTimes.Location = new Point(120, 123);
+            cboTimes.Margin = new Padding(4);
             cboTimes.Name = "cboTimes";
-            cboTimes.Size = new Size(203, 23);
+            cboTimes.Size = new Size(288, 27);
             cboTimes.TabIndex = 13;
             cboTimes.Text = "Escolha o time do jogador";
             // 
             // cboJogadores
             // 
             cboJogadores.FormattingEnabled = true;
-            cboJogadores.Location = new Point(330, 6);
+            cboJogadores.Location = new Point(119, 49);
+            cboJogadores.Margin = new Padding(4);
             cboJogadores.Name = "cboJogadores";
-            cboJogadores.Size = new Size(186, 23);
+            cboJogadores.Size = new Size(288, 27);
             cboJogadores.TabIndex = 14;
             cboJogadores.Text = "Jogadores cadrastrados";
             cboJogadores.SelectedIndexChanged += cboJogadores_SelectedIndexChanged;
@@ -191,32 +196,49 @@
             // lbl_time
             // 
             lbl_time.AutoSize = true;
-            lbl_time.Location = new Point(40, 9);
+            lbl_time.Location = new Point(36, 125);
+            lbl_time.Margin = new Padding(4, 0, 4, 0);
             lbl_time.Name = "lbl_time";
-            lbl_time.Size = new Size(37, 15);
+            lbl_time.Size = new Size(51, 19);
             lbl_time.TabIndex = 7;
             lbl_time.Text = "Time:";
             // 
+            // lblOpcao
+            // 
+            lblOpcao.AutoSize = true;
+            lblOpcao.Location = new Point(98, 26);
+            lblOpcao.Margin = new Padding(4, 0, 4, 0);
+            lblOpcao.Name = "lblOpcao";
+            lblOpcao.Size = new Size(330, 19);
+            lblOpcao.TabIndex = 15;
+            lblOpcao.Text = "Selecionar Jogador ou Cadrastar um Novo";
+            lblOpcao.Click += lblOpcao_Click;
+            // 
             // frmRegister
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
-            ClientSize = new Size(540, 301);
+            ClientSize = new Size(500, 381);
+            Controls.Add(lblOpcao);
             Controls.Add(cboJogadores);
             Controls.Add(cboTimes);
             Controls.Add(btnApagar);
-            Controls.Add(btn_enviar);
+            Controls.Add(btnEnviar);
             Controls.Add(lbl_time);
-            Controls.Add(txt_nome);
-            Controls.Add(txt_posicao);
-            Controls.Add(txt_idade);
+            Controls.Add(txtNome);
+            Controls.Add(txtPosicao);
+            Controls.Add(txtIdade);
             Controls.Add(lbl_idade);
             Controls.Add(lbl_posicao);
             Controls.Add(lbl_nome);
-            Margin = new Padding(3, 2, 3, 2);
+            Font = new Font("Gadugi", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Margin = new Padding(4);
+            MaximizeBox = false;
             Name = "frmRegister";
-            Text = "Registrar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Registrar Jogador";
             Load += frm_register_Load;
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider2).EndInit();
@@ -231,10 +253,10 @@
         private Label lbl_nome;
         private Label lbl_posicao;
         private Label lbl_idade;
-        private TextBox txt_idade;
-        private TextBox txt_posicao;
-        private TextBox txt_nome;
-        private Button btn_enviar;
+        private TextBox txtIdade;
+        private TextBox txtPosicao;
+        private TextBox txtNome;
+        private Button btnEnviar;
         private Button btnApagar;
         private ErrorProvider errorProvider1;
         private ToolTip toolTip1;
@@ -247,5 +269,6 @@
         private ComboBox cboTimes;
         private ComboBox cboJogadores;
         private Label lbl_time;
+        private Label lblOpcao;
     }
 }
