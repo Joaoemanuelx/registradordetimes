@@ -2,9 +2,9 @@ using System.Text.Json;
 
 namespace registradordetimes
 {
-    public partial class frm_prc : Form
+    public partial class frmPrincipal : Form
     {
-        public frm_prc()
+        public frmPrincipal()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace registradordetimes
             {
                 string existingJson = File.ReadAllText("Jogadores.json");
                 jogadores = JsonSerializer.Deserialize<List<Jogador>>(existingJson);
-                dataGridView1.DataSource = jogadores;
+                dgvJogadores.DataSource = jogadores;
             }
             else
             {
@@ -32,7 +32,7 @@ namespace registradordetimes
         private void registerDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            frm_register formRegisterData = new frm_register();
+            frmRegister formRegisterData = new frmRegister();
             formRegisterData.Show();
 
         }

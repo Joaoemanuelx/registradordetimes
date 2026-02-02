@@ -1,6 +1,6 @@
 ﻿namespace registradordetimes
 {
-    partial class frm_prc
+    partial class frmPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -34,9 +34,9 @@
             cadastrarTimeToolStripMenuItem = new ToolStripMenuItem();
             registerDataToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
-            dataGridView1 = new DataGridView();
+            dgvJogadores = new DataGridView();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvJogadores).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -46,7 +46,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Padding = new Padding(7, 3, 0, 3);
+            menuStrip1.Size = new Size(1000, 25);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -55,60 +56,63 @@
             // 
             menuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { showDataToolStripMenuItem, cadastrarTimeToolStripMenuItem, registerDataToolStripMenuItem, exitToolStripMenuItem });
             menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            menuToolStripMenuItem.Size = new Size(60, 24);
+            menuToolStripMenuItem.Size = new Size(50, 19);
             menuToolStripMenuItem.Text = "Menu";
             // 
             // showDataToolStripMenuItem
             // 
             showDataToolStripMenuItem.Name = "showDataToolStripMenuItem";
-            showDataToolStripMenuItem.Size = new Size(226, 26);
+            showDataToolStripMenuItem.Size = new Size(180, 22);
             showDataToolStripMenuItem.Text = "Mostrar jogadores";
             showDataToolStripMenuItem.Click += showDataToolStripMenuItem_Click;
             // 
             // cadastrarTimeToolStripMenuItem
             // 
             cadastrarTimeToolStripMenuItem.Name = "cadastrarTimeToolStripMenuItem";
-            cadastrarTimeToolStripMenuItem.Size = new Size(226, 26);
+            cadastrarTimeToolStripMenuItem.Size = new Size(180, 22);
             cadastrarTimeToolStripMenuItem.Text = "Cadastrar time";
             cadastrarTimeToolStripMenuItem.Click += cadastrarTimeToolStripMenuItem_Click;
             // 
             // registerDataToolStripMenuItem
             // 
             registerDataToolStripMenuItem.Name = "registerDataToolStripMenuItem";
-            registerDataToolStripMenuItem.Size = new Size(226, 26);
+            registerDataToolStripMenuItem.Size = new Size(180, 22);
             registerDataToolStripMenuItem.Text = "Cadastrar jogadores";
             registerDataToolStripMenuItem.Click += registerDataToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(226, 26);
+            exitToolStripMenuItem.Size = new Size(180, 22);
             exitToolStripMenuItem.Text = "Sair";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
-            // dataGridView1
+            // dgvJogadores
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 31);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(800, 419);
-            dataGridView1.TabIndex = 1;
+            dgvJogadores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvJogadores.Location = new Point(0, 32);
+            dgvJogadores.Margin = new Padding(4, 3, 4, 3);
+            dgvJogadores.Name = "dgvJogadores";
+            dgvJogadores.RowHeadersWidth = 51;
+            dgvJogadores.Size = new Size(1000, 440);
+            dgvJogadores.TabIndex = 1;
             // 
-            // frm_prc
+            // frmPrincipal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            ClientSize = new Size(1000, 473);
+            Controls.Add(dgvJogadores);
             Controls.Add(menuStrip1);
+            Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             MainMenuStrip = menuStrip1;
-            Name = "frm_prc";
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "frmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Registrador de time";
+            Text = "Registrador de Times";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvJogadores).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -120,7 +124,7 @@
         private ToolStripMenuItem showDataToolStripMenuItem;
         private ToolStripMenuItem registerDataToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
-        private DataGridView dataGridView1;
+        private DataGridView dgvJogadores;
         private ToolStripMenuItem cadastrarTimeToolStripMenuItem;
     }
 }
