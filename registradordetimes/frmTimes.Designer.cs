@@ -32,33 +32,36 @@
             txtCadastratTime = new Label();
             btnCadastrartime = new Button();
             btnApagarTime = new Button();
-            listBox2 = new ListBox();
-            btnCarregarTimes = new Button();
+            comboBox1 = new ComboBox();
+            lblTimesNome = new Label();
             SuspendLayout();
             // 
             // txtNomeTime
             // 
-            txtNomeTime.Location = new Point(77, 48);
-            txtNomeTime.Margin = new Padding(3, 2, 3, 2);
+            txtNomeTime.Location = new Point(98, 52);
+            txtNomeTime.Margin = new Padding(4);
             txtNomeTime.Name = "txtNomeTime";
-            txtNomeTime.Size = new Size(151, 23);
+            txtNomeTime.Size = new Size(256, 34);
             txtNomeTime.TabIndex = 0;
             // 
             // txtCadastratTime
             // 
             txtCadastratTime.AutoSize = true;
-            txtCadastratTime.Location = new Point(25, 51);
+            txtCadastratTime.Font = new Font("Gadugi", 12F, FontStyle.Bold);
+            txtCadastratTime.Location = new Point(18, 56);
+            txtCadastratTime.Margin = new Padding(4, 0, 4, 0);
             txtCadastratTime.Name = "txtCadastratTime";
-            txtCadastratTime.Size = new Size(43, 15);
+            txtCadastratTime.Size = new Size(72, 24);
             txtCadastratTime.TabIndex = 1;
             txtCadastratTime.Text = "Nome:";
             // 
             // btnCadastrartime
             // 
-            btnCadastrartime.Location = new Point(77, 88);
-            btnCadastrartime.Margin = new Padding(3, 2, 3, 2);
+            btnCadastrartime.Font = new Font("Gadugi", 12F, FontStyle.Bold);
+            btnCadastrartime.Location = new Point(98, 94);
+            btnCadastrartime.Margin = new Padding(4);
             btnCadastrartime.Name = "btnCadastrartime";
-            btnCadastrartime.Size = new Size(82, 22);
+            btnCadastrartime.Size = new Size(141, 35);
             btnCadastrartime.TabIndex = 2;
             btnCadastrartime.Text = "&Cadastrar";
             btnCadastrartime.UseVisualStyleBackColor = true;
@@ -66,51 +69,52 @@
             // 
             // btnApagarTime
             // 
-            btnApagarTime.Location = new Point(390, 70);
-            btnApagarTime.Margin = new Padding(3, 2, 3, 2);
+            btnApagarTime.Font = new Font("Gadugi", 12F, FontStyle.Bold);
+            btnApagarTime.Location = new Point(98, 226);
+            btnApagarTime.Margin = new Padding(4);
             btnApagarTime.Name = "btnApagarTime";
-            btnApagarTime.Size = new Size(82, 22);
+            btnApagarTime.Size = new Size(141, 35);
             btnApagarTime.TabIndex = 3;
             btnApagarTime.Text = "&Apagar";
             btnApagarTime.UseVisualStyleBackColor = true;
             btnApagarTime.Click += btnApagarTime_Click;
             // 
-            // listBox2
+            // comboBox1
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(254, 44);
-            listBox2.Margin = new Padding(3, 2, 3, 2);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(132, 79);
-            listBox2.TabIndex = 4;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(98, 186);
+            comboBox1.Margin = new Padding(4);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(256, 32);
+            comboBox1.TabIndex = 6;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // btnCarregarTimes
+            // lblTimesNome
             // 
-            btnCarregarTimes.Location = new Point(390, 44);
-            btnCarregarTimes.Margin = new Padding(3, 2, 3, 2);
-            btnCarregarTimes.Name = "btnCarregarTimes";
-            btnCarregarTimes.Size = new Size(82, 22);
-            btnCarregarTimes.TabIndex = 5;
-            btnCarregarTimes.Text = "&Carregar";
-            btnCarregarTimes.UseVisualStyleBackColor = true;
-            btnCarregarTimes.Click += btnCarregarTimes_Click;
+            lblTimesNome.AutoSize = true;
+            lblTimesNome.Location = new Point(18, 189);
+            lblTimesNome.Name = "lblTimesNome";
+            lblTimesNome.Size = new Size(71, 24);
+            lblTimesNome.TabIndex = 7;
+            lblTimesNome.Text = "Times:";
             // 
             // frmTimes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(12F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(518, 166);
-            Controls.Add(btnCarregarTimes);
-            Controls.Add(listBox2);
+            ClientSize = new Size(445, 322);
+            Controls.Add(lblTimesNome);
+            Controls.Add(comboBox1);
             Controls.Add(btnApagarTime);
             Controls.Add(btnCadastrartime);
             Controls.Add(txtCadastratTime);
             Controls.Add(txtNomeTime);
-            Margin = new Padding(3, 2, 3, 2);
+            Font = new Font("Gadugi", 12F, FontStyle.Bold);
+            Margin = new Padding(4);
             Name = "frmTimes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadrastar Times";
+            Load += frmTimes_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -121,7 +125,7 @@
         private Label txtCadastratTime;
         private Button btnCadastrartime;
         private Button btnApagarTime;
-        private ListBox listBox2;
-        private Button btnCarregarTimes;
+        private ComboBox comboBox1;
+        private Label lblTimesNome;
     }
 }

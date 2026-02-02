@@ -18,7 +18,7 @@ namespace registradordetimes
         {
             InitializeComponent();
         }
-
+        private List<Time> times = new List<Time>();
         private void btnCadastrarTime_Click(object sender, EventArgs e)
         {
             Time time = new Time();
@@ -33,7 +33,7 @@ namespace registradordetimes
             {
                 times = new List<Time>();
             }
-            if(times.Any(t =>
+            if (times.Any(t =>
             t.nome.Equals(txtNomeTime.Text, StringComparison.OrdinalIgnoreCase)))
             {
                 MessageBox.Show("Já existe um time cadastrado com esse nome.");
@@ -46,21 +46,17 @@ namespace registradordetimes
             File.WriteAllText(fileName, jsonString);
             MessageBox.Show("Time " + time.nome + " cadastrado com sucesso!");
             limparTimes();
-        }
-
-        private void btnCarregarTimes_Click(object sender, EventArgs e)
-        {
-            mostrarlista();
+            CarregarTimesCombo();
         }
 
         private void btnApagarTime_Click(object sender, EventArgs e)
         {
-            if (listBox2.SelectedItem == null)
+            if (comboBox1.SelectedItem == null)
             {
-                MessageBox.Show("Selecione um jogador para apagar.");
+                MessageBox.Show("Selecione um time para apagar.");
                 return;
             }
-            DialogResult result = MessageBox.Show("Tem certeza que deseja apagar o jogador selecionado?", "Confirmação", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Tem certeza que deseja apagar o time selecionado?", "Confirmação", MessageBoxButtons.YesNo);
             if (result != DialogResult.Yes)
             {
                 return;
@@ -68,26 +64,64 @@ namespace registradordetimes
             List<Time> times;
             string existingJson = File.ReadAllText("Times.json");
             times = JsonSerializer.Deserialize<List<Time>>(existingJson);
-            Time timeToRemove = (Time)listBox2.SelectedItem;
+            Time timeToRemove = (Time)comboBox1.SelectedItem;
             times.RemoveAll(j => j.nome == timeToRemove.nome);
             string jsonString = JsonSerializer.Serialize(times, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText("Times.json", jsonString);
             MessageBox.Show("Time " + timeToRemove.nome + " apagado com sucesso!");
-            mostrarlista();
+            CarregarTimesCombo();
+
         }
 
-        private void mostrarlista()
+        private void CarregarTimesCombo()
         {
-            List<Time> times;
-            string existingJson = File.ReadAllText("Times.json");
-            times = JsonSerializer.Deserialize<List<Time>>(existingJson);
-            listBox2.DataSource = times;
-            listBox2.DisplayMember = "nome";
+            if (!File.Exists("Times.json"))
+            {
+                comboBox1.DataSource = null;
+                return;
+            }
+
+            string json = File.ReadAllText("Times.json");
+            times = JsonSerializer.Deserialize<List<Time>>(json) ?? new List<Time>();
+
+            comboBox1.DataSource = null;
+            comboBox1.DataSource = times;
+            comboBox1.DisplayMember = "nome";
+        }
+
+        private void frmTimes_Load(object sender, EventArgs e)
+        {
+            CarregarTimesCombo();
         }
 
         private void limparTimes()
         {
             txtNomeTime.Clear();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem == null)
+            {
+                btnApagarTime.Enabled = false;
+                btnCadastrartime.Enabled = true;
+                return;
+            }
+
+            // Se o campo de texto estiver vazio, não permite apagar
+            if (string.IsNullOrWhiteSpace(txtNomeTime.Text))
+            {
+                btnApagarTime.Enabled = false;
+                btnCadastrartime.Enabled = true;
+                return;
+            }
+
+            Time timeSelecionado = (Time)comboBox1.SelectedItem;
+
+            txtNomeTime.Text = timeSelecionado.nome;
+
+            btnApagarTime.Enabled = true;
+            btnCadastrartime.Enabled = false;
         }
     }
 }
