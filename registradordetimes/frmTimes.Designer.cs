@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             txtNomeTime = new TextBox();
-            txtCadastratTime = new Label();
+            lblCadastrarTime = new Label();
             btnCadastrartime = new Button();
             btnApagarTime = new Button();
             comboBox1 = new ComboBox();
@@ -41,19 +41,19 @@
             txtNomeTime.Location = new Point(98, 52);
             txtNomeTime.Margin = new Padding(4);
             txtNomeTime.Name = "txtNomeTime";
-            txtNomeTime.Size = new Size(256, 34);
+            txtNomeTime.Size = new Size(256, 29);
             txtNomeTime.TabIndex = 0;
             // 
-            // txtCadastratTime
+            // lblCadastrarTime
             // 
-            txtCadastratTime.AutoSize = true;
-            txtCadastratTime.Font = new Font("Gadugi", 12F, FontStyle.Bold);
-            txtCadastratTime.Location = new Point(18, 56);
-            txtCadastratTime.Margin = new Padding(4, 0, 4, 0);
-            txtCadastratTime.Name = "txtCadastratTime";
-            txtCadastratTime.Size = new Size(72, 24);
-            txtCadastratTime.TabIndex = 1;
-            txtCadastratTime.Text = "Nome:";
+            lblCadastrarTime.AutoSize = true;
+            lblCadastrarTime.Font = new Font("Gadugi", 12F, FontStyle.Bold);
+            lblCadastrarTime.Location = new Point(18, 56);
+            lblCadastrarTime.Margin = new Padding(4, 0, 4, 0);
+            lblCadastrarTime.Name = "lblCadastrarTime";
+            lblCadastrarTime.Size = new Size(60, 19);
+            lblCadastrarTime.TabIndex = 1;
+            lblCadastrarTime.Text = "Nome:";
             // 
             // btnCadastrartime
             // 
@@ -85,7 +85,7 @@
             comboBox1.Location = new Point(98, 186);
             comboBox1.Margin = new Padding(4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(256, 32);
+            comboBox1.Size = new Size(256, 27);
             comboBox1.TabIndex = 6;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
@@ -94,20 +94,20 @@
             lblTimesNome.AutoSize = true;
             lblTimesNome.Location = new Point(18, 189);
             lblTimesNome.Name = "lblTimesNome";
-            lblTimesNome.Size = new Size(71, 24);
+            lblTimesNome.Size = new Size(58, 19);
             lblTimesNome.TabIndex = 7;
             lblTimesNome.Text = "Times:";
             // 
             // frmTimes
             // 
-            AutoScaleDimensions = new SizeF(12F, 24F);
+            AutoScaleDimensions = new SizeF(10F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(445, 322);
             Controls.Add(lblTimesNome);
             Controls.Add(comboBox1);
             Controls.Add(btnApagarTime);
             Controls.Add(btnCadastrartime);
-            Controls.Add(txtCadastratTime);
+            Controls.Add(lblCadastrarTime);
             Controls.Add(txtNomeTime);
             Font = new Font("Gadugi", 12F, FontStyle.Bold);
             Margin = new Padding(4);
@@ -122,7 +122,7 @@
         #endregion
 
         private TextBox txtNomeTime;
-        private Label txtCadastratTime;
+        private Label lblCadastrarTime;
         private Button btnCadastrartime;
         private Button btnApagarTime;
         private ComboBox comboBox1;

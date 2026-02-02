@@ -190,8 +190,12 @@ namespace registradordetimes
 
             Jogador jogadorSelecionado = (Jogador)cboJogadores.SelectedItem;
 
-            if (jogadorSelecionado.nome == "➕ Cadastrar novo jogador...")
+            if (jogadorSelecionado.nome == "+ Cadastrar novo jogador...")
             {
+                txtNome.Enabled = true;
+                txtPosicao.Enabled = true;
+                txtIdade.Enabled = true;
+                cboTimes.Enabled = true;
                 btnApagar.Enabled = false;
                 btnEnviar.Enabled = true;
                 limparcampos();
@@ -206,6 +210,11 @@ namespace registradordetimes
             txtPosicao.Text = jogadorSelecionado.posicao;
             txtIdade.Text = jogadorSelecionado.idade.ToString();
             cboTimes.Text = jogadorSelecionado.time;
+
+            txtNome.Enabled = false;
+            txtPosicao.Enabled = false;
+            txtIdade.Enabled = false;
+            cboTimes.Enabled = false;
         }
 
         //carregar times no combobox
@@ -229,7 +238,7 @@ namespace registradordetimes
         private void CarregarJogadoresCombo()
         {
             var listaParaCombo = new List<Jogador>();
-            listaParaCombo.Add(new Jogador { nome = "➕ Cadastrar novo jogador..." });
+            listaParaCombo.Add(new Jogador { nome = "+ Cadastrar novo jogador..." });
 
             if (File.Exists("Jogadores.json"))
             {

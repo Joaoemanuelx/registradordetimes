@@ -33,12 +33,20 @@ namespace registradordetimes
             {
                 times = new List<Time>();
             }
+
             if (times.Any(t =>
             t.nome.Equals(txtNomeTime.Text, StringComparison.OrdinalIgnoreCase)))
             {
                 MessageBox.Show("Já existe um time cadastrado com esse nome.");
                 return;
             }
+
+            if (string.IsNullOrWhiteSpace(txtNomeTime.Text))
+            {
+                MessageBox.Show("O nome do time não pode estar vazio.");
+                return;
+            }
+
             time.nome = txtNomeTime.Text;
             times.Add(time);
             string fileName = "Times.json";
@@ -75,17 +83,22 @@ namespace registradordetimes
 
         private void CarregarTimesCombo()
         {
-            if (!File.Exists("Times.json"))
-            {
-                comboBox1.DataSource = null;
-                return;
-            }
+            var listaParaCombo = new List<Time>();
+            listaParaCombo.Add(new Time { nome = "+ Cadastrar novo Time..." });
 
-            string json = File.ReadAllText("Times.json");
-            times = JsonSerializer.Deserialize<List<Time>>(json) ?? new List<Time>();
+            if (File.Exists("Times.json"))
+            {
+                string json = File.ReadAllText("Times.json");
+                times = JsonSerializer.Deserialize<List<Time>>(json) ?? new List<Time>();
+            }
+            else 
+            { 
+                times = new List<Time>();
+            }
+            listaParaCombo.AddRange(times);
 
             comboBox1.DataSource = null;
-            comboBox1.DataSource = times;
+            comboBox1.DataSource = listaParaCombo;
             comboBox1.DisplayMember = "nome";
         }
 
@@ -101,27 +114,23 @@ namespace registradordetimes
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem == null)
-            {
-                btnApagarTime.Enabled = false;
-                btnCadastrartime.Enabled = true;
-                return;
-            }
-
-            // Se o campo de texto estiver vazio, não permite apagar
-            if (string.IsNullOrWhiteSpace(txtNomeTime.Text))
-            {
-                btnApagarTime.Enabled = false;
-                btnCadastrartime.Enabled = true;
-                return;
-            }
+            if (comboBox1.SelectedIndex == -1) return;
 
             Time timeSelecionado = (Time)comboBox1.SelectedItem;
+            if (timeSelecionado.nome == "+ Cadastrar novo Time...")
+            {
+                btnApagarTime.Enabled = false;
+                btnCadastrartime.Enabled = true;
+                txtNomeTime.Enabled = true;
+                limparTimes();
+                return;
+            }
 
             txtNomeTime.Text = timeSelecionado.nome;
 
             btnApagarTime.Enabled = true;
             btnCadastrartime.Enabled = false;
+            txtNomeTime.Enabled = false;
         }
     }
 }
